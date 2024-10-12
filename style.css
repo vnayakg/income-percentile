@@ -1,0 +1,130 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --background-color: #ffffff;
+    --text-color: #34495e;
+    --input-border-color: #bdc3c7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.container {
+    background-color: var(--background-color);
+    border-radius: 8px;
+    padding: 40px;
+    width: 100%;
+    max-width: 800px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: var(--secondary-color);
+    text-align: center;
+}
+
+.input-group {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+#salaryInput {
+    flex-grow: 1;
+    padding: 12px;
+    font-size: 1.1em;
+    border: 2px solid var(--input-border-color);
+    border-radius: 4px 0 0 4px;
+    transition: all 0.3s ease;
+}
+
+#salaryInput:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+button {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.1em;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+#info {
+    font-size: 1.1em;
+    margin-top: 30px;
+    color: var(--text-color);
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#percentileChart {
+    margin-top: 40px;
+    width: 100%;
+    height: 400px;
+}
+
+.red-line {
+    stroke: #e74c3c;
+    stroke-dasharray: 5, 5;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .input-group {
+        flex-direction: column;
+    }
+
+    #salaryInput,
+    button {
+        width: 100%;
+        border-radius: 4px;
+    }
+
+    #salaryInput {
+        margin-bottom: 10px;
+    }
+
+    #percentileChart {
+        height: 300px;
+    }
+}
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
